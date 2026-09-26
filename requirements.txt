@@ -1,0 +1,5 @@
+# Sphinx doc-site build dependencies (MyST Markdown + Read the Docs theme).
+# Docs-only: keep PyQt5/PyInstaller runtime deps out of the doc build.
+sphinx>=7.3,<9
+myst-parser>=2.0
+sphinx-rtd-theme>=1.3

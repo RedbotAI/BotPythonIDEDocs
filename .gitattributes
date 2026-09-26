@@ -1,0 +1,2 @@
+examples/*.py text eol=lf
+examples/*.xml text eol=lf

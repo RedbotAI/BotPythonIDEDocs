@@ -1,0 +1,128 @@
+[
+  {
+    "id": "T01",
+    "name": "【BotPython】板载 IMU 与 LCD 测试",
+    "python_sha256": "864d23196f81ef73efc52c7a7f08d7d8ff8779594ac9941818ca85d18d72dbc6",
+    "xml_sha256": "07b49d4ae47b613744dfbb13e8dac3494a55a7209af8fe408e96bfcf14e8a5cf"
+  },
+  {
+    "id": "T02",
+    "name": "【BotPython】完整传感器屏幕测试",
+    "python_sha256": "771911d11f4e90919ee598794a9b093cc54c291e96cfbfdd2a7d7bdecb3e2d9d",
+    "xml_sha256": "3c76a1eede8b1ea91bf66f0b1f052dff2ca03c50decf60b515d7e0cab5092732"
+  },
+  {
+    "id": "T03",
+    "name": "【BotPython】HS-S33A 土壤采样",
+    "python_sha256": "e44172f47b6d5d4fe145e5727b69ac4a727990b45916e9e4f2f995cf89b8d0a7",
+    "xml_sha256": "0cc6680683b35d2d4080b860aa58f7ed077751caa431a6197516e32998364936"
+  },
+  {
+    "id": "T04",
+    "name": "【BotPython】已接入三传感器测试",
+    "python_sha256": "39153f327fc8b7cf750983873277f25867301cd388077db6c6f534fa658466a8",
+    "xml_sha256": "70c70fafe36efcef77dd3c93c8355dc7a7acf1f97c7179771acaab4943678321"
+  },
+  {
+    "id": "T05",
+    "name": "【BotPython】DHT11 温湿度",
+    "python_sha256": "d4b508d88be7b917a5ac0c83597e3c282a5c68aba7a9835d74cf0f209d272314",
+    "xml_sha256": "e3be075ebf1926dc3e0f2548f145a98cd0144abccc91a35794feaa822fcc2efa"
+  },
+  {
+    "id": "T06",
+    "name": "【BotPython】BH1750 光照",
+    "python_sha256": "05d07911e7bdb3b1fe4a9f7c45329254454096691a20a8580b41619ae975dee3",
+    "xml_sha256": "4379ff3307213fad5e6098c290adcd1a166b70eabfea314a58d122179c2b153c"
+  },
+  {
+    "id": "T07",
+    "name": "【BotPython】JW01 CO₂",
+    "python_sha256": "b3786a80a7f4504f5c0ed1f24bb402d41ff5b7fdf20e2e3df9b8cd1bd6dddf3d",
+    "xml_sha256": "4700bf41cf8f24047a58874b5c4798309e8a5f53525ad04609ed38740f655829"
+  },
+  {
+    "id": "T08",
+    "name": "【BotPython】温湿度显示屏",
+    "python_sha256": "d4b508d88be7b917a5ac0c83597e3c282a5c68aba7a9835d74cf0f209d272314",
+    "xml_sha256": "5fd5a1b6816ff09d44cf6855e2022c0d93d8a815b7997d3427fc6f964d1b4fcb"
+  },
+  {
+    "id": "T09",
+    "name": "【BotPython】水泵关闭",
+    "python_sha256": "9c71339d1027fb336fa7102761c140f3d11c1cf69b23257d5ebb389d2c13e953",
+    "xml_sha256": "336f823242b679b305c1bee64f68770f3c183a860ca2771b149a892f15771ae5"
+  },
+  {
+    "id": "T10",
+    "name": "【BotPython】MQTT 发布模板",
+    "python_sha256": "70302d10b7aac81ca94f2c9fa47beef1dca1814985d3953dce54636454b010f9",
+    "xml_sha256": "412c136b0003a1dce6397bb0c07455318542bb3689afbbb85324795eccfe4ba9"
+  },
+  {
+    "id": "T11",
+    "name": "【入门】闪烁LED",
+    "python_sha256": "9b71ef079b80e2fe1d7193675644efb80f4ce74cb41652155385994020b67f30",
+    "xml_sha256": "8a1f450fe12bef86ca35b965960689e19e5d230b2d7e47ba0d4c208c782e213b"
+  },
+  {
+    "id": "T12",
+    "name": "【入门】按钮控制LED",
+    "python_sha256": "7aace6fe54ae029d213d13f9c668917d2146f8c8d49e935a295a598bd001107c",
+    "xml_sha256": "52a8f2829718acadb8bccfdc34f38a20ae8f225a297c0bec40dd4dfc4f9281f8"
+  },
+  {
+    "id": "T13",
+    "name": "【入门】串口打招呼",
+    "python_sha256": "c9635a49f27971fddcfce71473f5fe6ac749386392569f40460eedba49ca3fdf",
+    "xml_sha256": "cea3865e4ee4a649e21dee57edf1b706369733d6b43674e85ff4654d624f930b"
+  },
+  {
+    "id": "T14",
+    "name": "【进阶】呼吸灯",
+    "python_sha256": "4f412c1a37f8d7a3df8b423806fb5595c50b84b55df9a087aa38ddfe8150ccfd",
+    "xml_sha256": "210128c8c40e08042b3315609d30144ee89b09acbacd40a01b359b4f6a822079"
+  },
+  {
+    "id": "T15",
+    "name": "【进阶】温度监测",
+    "python_sha256": "d40b6473d9461d5c39e3eb78fa9d533f65636c5baa4453a66537f58730b77d0d",
+    "xml_sha256": "a4cdb984d63e6d7c6fa6fa090b304f08576e36882fe055c7cd431d7fd8744e51"
+  },
+  {
+    "id": "T16",
+    "name": "【进阶】流水灯",
+    "python_sha256": "0d2da519e5d2bb2ae1c0773fb3ff1a30af728c5af43b2b770a823f63e1f4a1b3",
+    "xml_sha256": "b2f9eaf0715df6b7c5cae6ddca9f6eed7db3370bb71f7e3446b98c9f7746a6fa"
+  },
+  {
+    "id": "T17",
+    "name": "【进阶】倒计时发射",
+    "python_sha256": "3515d372cd1676152be84cd479d3c4973d552a1c3681ef39e1f7d176a6c13dae",
+    "xml_sha256": "3f6b5ba0f6d1979ce6bfdacb6ea18e25c80f783d7a3a0081e630e6fffbb5d524"
+  },
+  {
+    "id": "T18",
+    "name": "【进阶】串口回显",
+    "python_sha256": "0c4959d786c011f57158d070e48bfbcb21cd46e20f5e3ca8b46801e106e45a86",
+    "xml_sha256": "6872da99b8eef5a85f38b4084aebd009386ac4a19d3640fd5ad7a8647718590d"
+  },
+  {
+    "id": "T19",
+    "name": "【综合】自定义函数 · 流水灯",
+    "python_sha256": "9c24d7413a79d44d04e6579062952b72425c9087e8c6b75a2e84398f77031083",
+    "xml_sha256": "2c1ed667f5584ed63943128304f8269ff74b085c4d11bfb207e95bc73a8a4eb4"
+  },
+  {
+    "id": "T20",
+    "name": "【综合】自定义函数 · 呼吸灯",
+    "python_sha256": "295a735b6954046efd42e2d2b3dde47a0a03f1d5c98c1490421afbf2014ee773",
+    "xml_sha256": "75e09a14c6810542802c4e4cbe4a3295b26ee80e7dfc1ded0d01c0a5a461b871"
+  },
+  {
+    "id": "T21",
+    "name": "【综合】智能夜灯",
+    "python_sha256": "246e4a00a57d90718cc4844bc77a042448baf7b300db286f8a7fd111bdf21b8d",
+    "xml_sha256": "35ece4290fbe7973cdbe00023b54e164aa84312dcabca2713fbc7e5ebadbd33f"
+  }
+]
