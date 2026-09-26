@@ -77,23 +77,113 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import rgb
+
+light_lux = None
+
+"""Optional external sensors for block programs. No hardware access on import."""
+_bp_sensor_cache = globals().get('_bp_sensor_cache', {})
+
+class BPSensor:
+    def __init__(self, kind, pin=5):
+        self.kind, self.pin = kind, pin
+        self.device = None
+        self.status = 'not_connected'
+        self.last_error = ''
+        self._sample = None
+
+    def _connect(self):
+        if self.device is not None:
+            return True
+        try:
+            if self.kind == 'light':
+                from bh1750 import BH1750
+                self.device = BH1750()
+            elif self.kind == 'co2':
+                from co2_sensors_jw01 import CO2SensorJW01
+                # Old firmware accepts auto_start=False; explicit polling is new.
+                self.device = CO2SensorJW01()
+            elif self.kind == 'dht':
+                import dht
+                from mpython import Pin
+                self.device = dht.DHT11(Pin(getattr(Pin, 'P' + str(self.pin))))
+            else:
+                raise ValueError('Unknown sensor kind')
+            return True
+        except Exception as error:
+            self.status = 'not_connected'
+            self.last_error = str(error)
+            return False
+
+    def _read(self, method):
+        if not self._connect():
+            return float('nan')
+        try:
+            value = getattr(self.device, method)()
+            if value is None or (self.kind in ('light', 'co2') and value < 0):
+                raise OSError('No sensor data')
+            if self.kind == 'co2' and hasattr(self.device, 'is_data_fresh'):
+                if not self.device.is_data_fresh() or value == 0:
+                    raise OSError('No fresh CO2 data')
+            self.status = 'ready'
+            self.last_error = ''
+            return value
+        except Exception as error:
+            self.status = 'not_connected'
+            self.last_error = str(error)
+            return float('nan')
+
+    def measure(self):
+        self._sample = None
+        if not self._connect():
+            return False
+        try:
+            self.device.measure()
+            self._sample = (self.device.temperature(), self.device.humidity())
+            self.status = 'ready'
+            self.last_error = ''
+            return True
+        except Exception as error:
+            self.status = 'not_connected'
+            self.last_error = str(error)
+            return False
+
+    def temperature(self):
+        return self._sample[0] if self._sample is not None else float('nan')
+
+    def humidity(self):
+        return self._sample[1] if self._sample is not None else float('nan')
+
+    def read(self):
+        return self._read('read')
+
+    def read_co2_ppm(self):
+        return self._read('read_co2_ppm')
+
+    def is_connected(self):
+        return self.status == 'ready'
+
+def bp_sensor(kind, pin=5):
+    key = (kind, pin)
+    if key not in _bp_sensor_cache:
+        _bp_sensor_cache[key] = BPSensor(kind, pin)
+    return _bp_sensor_cache[key]
 
 
 bot_screen = Screen240()
-from machine import ADC, Pin
-adc34 = ADC(Pin(34))
-adc34.atten(ADC.ATTN_11DB)
-from machine import Pin, PWM
-pwm2 = PWM(Pin(2), freq=1000)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
+environment_light = bp_sensor('light')
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+  light_lux = environment_light.read()
+  bot_screen.draw_label(text='Light lux: ' + str(light_lux), row=2, color=0xffffff, wrap=False)
+  if light_lux < 50:
+    rgb.fill((0, 40, 0))
+    rgb.write()
+  else:
+    rgb.fill((0, 0, 0))
+    rgb.write()
+  bot_screen.draw_label(text='Night light', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
   import time
   time.sleep(2)
-  if adc34.read() > 2000:
-    pwm2.duty(1023)
-  else:
-    pwm2.duty(0)
-  import time
-  time.sleep_ms(100)

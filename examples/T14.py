@@ -77,20 +77,31 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import rgb
 
-i = None
+brightness = None
 
 
 bot_screen = Screen240()
+soil_1 = MPythonPin(0, PinMode.ANALOG)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
-  bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
-  bot_screen.update()
-  import time
-  time.sleep(2)
-  from machine import Pin, PWM
-  pwm2 = PWM(Pin(2), freq=1000)
-  for i in range(0, 1024, 16):
-    pwm2.duty(i)
-  for i in range(1023, -1, -16):
-    pwm2.duty(i)
+  for brightness in range(0, 51, 5):
+    rgb.fill((0, 0, 0))
+    rgb[max(0, min(len(rgb) - 1, int(0)))] = (max(0, min(255, int(0))), max(0, min(255, int(brightness))), max(0, min(255, int(0))))
+    rgb.write()
+    bot_screen.draw_label(text='Brightness: ' + str(brightness), row=2, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='WS2812 breathe', row=1, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
+    bot_screen.update()
+    import time
+    time.sleep(0.05)
+  for brightness in range(50, -1, -5):
+    rgb.fill((0, 0, 0))
+    rgb[max(0, min(len(rgb) - 1, int(0)))] = (max(0, min(255, int(0))), max(0, min(255, int(brightness))), max(0, min(255, int(0))))
+    rgb.write()
+    bot_screen.draw_label(text='Brightness: ' + str(brightness), row=2, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='WS2812 breathe', row=1, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
+    bot_screen.update()
+    import time
+    time.sleep(0.05)

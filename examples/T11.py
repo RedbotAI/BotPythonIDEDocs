@@ -77,20 +77,23 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import rgb
 
 
 bot_screen = Screen240()
-from machine import Pin
-pin2 = Pin(2, Pin.OUT)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+  rgb.fill((0, 40, 0))
+  rgb.write()
+  bot_screen.draw_label(text='RGB ON', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
   import time
-  time.sleep(2)
-  pin2.value(1)
+  time.sleep(0.5)
+  rgb.fill((0, 0, 0))
+  rgb.write()
+  bot_screen.draw_label(text='RGB OFF', row=1, color=0xffffff, wrap=False)
+  bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
+  bot_screen.update()
   import time
-  time.sleep(1)
-  pin2.value(0)
-  import time
-  time.sleep(1)
+  time.sleep(0.5)

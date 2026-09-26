@@ -77,22 +77,23 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import button_a
+from mpython import rgb
 
 
 bot_screen = Screen240()
-from machine import Pin
-pin2 = Pin(2, Pin.OUT)
-from machine import Pin
-pin4 = Pin(4, Pin.IN, Pin.PULL_UP)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+  if button_a.value() == 0:
+    rgb.fill((0, 40, 0))
+    rgb.write()
+    bot_screen.draw_label(text='Button A: pressed', row=2, color=0xffffff, wrap=False)
+  else:
+    rgb.fill((0, 0, 0))
+    rgb.write()
+    bot_screen.draw_label(text='Button A: released', row=2, color=0xffffff, wrap=False)
+  bot_screen.draw_label(text='Button / RGB', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
   import time
-  time.sleep(2)
-  if pin4.value() == 0:
-    pin2.value(1)
-  else:
-    pin2.value(0)
-  import time
-  time.sleep_ms(20)
+  time.sleep(0.05)

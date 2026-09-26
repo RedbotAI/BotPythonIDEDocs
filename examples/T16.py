@@ -77,36 +77,32 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import rgb
+
+led = None
+
+def upRange(start, stop, step):
+  while start <= stop:
+    yield start
+    start += abs(step)
+
+def downRange(start, stop, step):
+  while start >= stop:
+    yield start
+    start -= abs(step)
 
 
 bot_screen = Screen240()
-from machine import Pin
-pin2 = Pin(2, Pin.OUT)
-from machine import Pin
-pin4 = Pin(4, Pin.OUT)
-from machine import Pin
-pin5 = Pin(5, Pin.OUT)
-from machine import Pin
-pin12 = Pin(12, Pin.OUT)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
-  bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
-  bot_screen.update()
-  import time
-  time.sleep(2)
-  pin2.value(1)
-  import time
-  time.sleep(0.2)
-  pin2.value(0)
-  pin4.value(1)
-  import time
-  time.sleep(0.2)
-  pin4.value(0)
-  pin5.value(1)
-  import time
-  time.sleep(0.2)
-  pin5.value(0)
-  pin12.value(1)
-  import time
-  time.sleep(0.2)
-  pin12.value(0)
+  led_end = len(rgb) - 1
+  for led in (0 <= led_end) and upRange(0, led_end, 1) or downRange(0, led_end, 1):
+    rgb.fill((0, 0, 0))
+    rgb[max(0, min(len(rgb) - 1, int(led)))] = (max(0, min(255, int(0))), max(0, min(255, int(40))), max(0, min(255, int(0))))
+    rgb.write()
+    bot_screen.draw_label(text='LED index: ' + str(led), row=2, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='WS2812 running', row=1, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
+    bot_screen.update()
+    import time
+    time.sleep(0.2)

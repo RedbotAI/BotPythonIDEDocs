@@ -62,67 +62,67 @@
   {
     "id": "T11",
     "name": "【入门】闪烁LED",
-    "python_sha256": "9b71ef079b80e2fe1d7193675644efb80f4ce74cb41652155385994020b67f30",
-    "xml_sha256": "8a1f450fe12bef86ca35b965960689e19e5d230b2d7e47ba0d4c208c782e213b"
+    "python_sha256": "9f95a936f47e1b0800d75ebcd0fb7b5002db9e00cdb0bed4fef0bbef3eb1716c",
+    "xml_sha256": "c6bfa93c6b193ee3b112b03ed680dcd8e7da0d3694853c41329b80d4f7aac40e"
   },
   {
     "id": "T12",
     "name": "【入门】按钮控制LED",
-    "python_sha256": "7aace6fe54ae029d213d13f9c668917d2146f8c8d49e935a295a598bd001107c",
-    "xml_sha256": "52a8f2829718acadb8bccfdc34f38a20ae8f225a297c0bec40dd4dfc4f9281f8"
+    "python_sha256": "44fdea299abbeb3424ba5cfc9b5a82a0bf9b7c637da3c3d87faec5f39b1a02fd",
+    "xml_sha256": "6cc4d82d18bc29f39fa566d3071a2a610fa2c8f98ced396152eb5aea8f0ebd0d"
   },
   {
     "id": "T13",
     "name": "【入门】串口打招呼",
-    "python_sha256": "c9635a49f27971fddcfce71473f5fe6ac749386392569f40460eedba49ca3fdf",
-    "xml_sha256": "cea3865e4ee4a649e21dee57edf1b706369733d6b43674e85ff4654d624f930b"
+    "python_sha256": "af83036d171ed65b48e6c1a4b8333cab550c8fd91afa79a0c276c3133c8709df",
+    "xml_sha256": "3a860b3898232b4d5c295ede9c4fab7eeadd16a20db3459e9fff62c64ac6aefa"
   },
   {
     "id": "T14",
     "name": "【进阶】呼吸灯",
-    "python_sha256": "4f412c1a37f8d7a3df8b423806fb5595c50b84b55df9a087aa38ddfe8150ccfd",
-    "xml_sha256": "210128c8c40e08042b3315609d30144ee89b09acbacd40a01b359b4f6a822079"
+    "python_sha256": "6480de1ff7768c520b133df230b6dd2980936f7785da4e0a164c046af17cbecc",
+    "xml_sha256": "2552f164dba415dad4c595e78f6a8de662d6f77dbd916bc94e073dda46ce13d1"
   },
   {
     "id": "T15",
     "name": "【进阶】温度监测",
-    "python_sha256": "d40b6473d9461d5c39e3eb78fa9d533f65636c5baa4453a66537f58730b77d0d",
-    "xml_sha256": "a4cdb984d63e6d7c6fa6fa090b304f08576e36882fe055c7cd431d7fd8744e51"
+    "python_sha256": "c4e279986894b1f7f187433d493a7c36f4e6c3f1e05f168ec5aa6c463f8f7211",
+    "xml_sha256": "37107a87810ede92a801db8fe19c7a511dc9a5f46e2d1ca613eddb99a0dabe17"
   },
   {
     "id": "T16",
     "name": "【进阶】流水灯",
-    "python_sha256": "0d2da519e5d2bb2ae1c0773fb3ff1a30af728c5af43b2b770a823f63e1f4a1b3",
-    "xml_sha256": "b2f9eaf0715df6b7c5cae6ddca9f6eed7db3370bb71f7e3446b98c9f7746a6fa"
+    "python_sha256": "88f3d4aad4f803dbb97552aac1bcabe3a1c724e316d1ad52159c38055083ade8",
+    "xml_sha256": "d431fba662bcbd353ad1c5c19f262c8d39f2a998df3ad88109024637a47b185d"
   },
   {
     "id": "T17",
     "name": "【进阶】倒计时发射",
-    "python_sha256": "3515d372cd1676152be84cd479d3c4973d552a1c3681ef39e1f7d176a6c13dae",
-    "xml_sha256": "3f6b5ba0f6d1979ce6bfdacb6ea18e25c80f783d7a3a0081e630e6fffbb5d524"
+    "python_sha256": "d1a3aa7da3e0e25ab61364b6d6e02dac1e8a24f02bdf7a789ab7e36fdfc4832c",
+    "xml_sha256": "75a6423d261ea25f8f63d269482ea00c1572cb5b840abe49141abbfdaa85db3b"
   },
   {
     "id": "T18",
     "name": "【进阶】串口回显",
-    "python_sha256": "0c4959d786c011f57158d070e48bfbcb21cd46e20f5e3ca8b46801e106e45a86",
-    "xml_sha256": "6872da99b8eef5a85f38b4084aebd009386ac4a19d3640fd5ad7a8647718590d"
+    "python_sha256": "90a2462ec78c3931f445e304af54aae8bb18728b73865829bd1b2b3fee9f8830",
+    "xml_sha256": "a1172ce4a932c820695d23299472a996e60fa00e2ea3b24aa72d72736afe7429"
   },
   {
     "id": "T19",
     "name": "【综合】自定义函数 · 流水灯",
-    "python_sha256": "9c24d7413a79d44d04e6579062952b72425c9087e8c6b75a2e84398f77031083",
-    "xml_sha256": "2c1ed667f5584ed63943128304f8269ff74b085c4d11bfb207e95bc73a8a4eb4"
+    "python_sha256": "7cee505056de2a6c2f26814690bf2506443cb65a1df1638a91241323eaff4f7e",
+    "xml_sha256": "3f57584c879f2fc33e65d483067660a48402d00a3845e2159b3d3cc2b2a79d90"
   },
   {
     "id": "T20",
     "name": "【综合】自定义函数 · 呼吸灯",
-    "python_sha256": "295a735b6954046efd42e2d2b3dde47a0a03f1d5c98c1490421afbf2014ee773",
-    "xml_sha256": "75e09a14c6810542802c4e4cbe4a3295b26ee80e7dfc1ded0d01c0a5a461b871"
+    "python_sha256": "24935074ebd6a6bb4151975c88a1ab5b9fae69d9a8ac7064af9fed30e4ed0f82",
+    "xml_sha256": "ccc2643b90bbacc2e7a2d57097836ea0a3e7e74af7f6e5d530b44ec552934946"
   },
   {
     "id": "T21",
     "name": "【综合】智能夜灯",
-    "python_sha256": "246e4a00a57d90718cc4844bc77a042448baf7b300db286f8a7fd111bdf21b8d",
-    "xml_sha256": "35ece4290fbe7973cdbe00023b54e164aa84312dcabca2713fbc7e5ebadbd33f"
+    "python_sha256": "fc4bc8466940ffb54c7294b299f02570b600c51377ac4671e8c7515b772a56c7",
+    "xml_sha256": "92ef2191dc3deb4aa66df1b6d5a8f727f8d88a2577a7e9d78f682ebbc4c96903"
   }
 ]

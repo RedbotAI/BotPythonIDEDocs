@@ -80,14 +80,11 @@ from mpython import MPythonPin, PinMode
 
 
 bot_screen = Screen240()
-from machine import UART
-uart1 = UART(1, baudrate=115200)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+  print('Hello BotPython!')
+  bot_screen.draw_label(text='USB console hello', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
-  import time
-  time.sleep(2)
-  uart1.write('Hello ESP32!')
   import time
   time.sleep(1)

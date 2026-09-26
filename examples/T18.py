@@ -77,18 +77,20 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from machine import UART
 
 
 bot_screen = Screen240()
-from machine import UART
-uart1 = UART(1, baudrate=115200)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
+uart2 = UART(2, baudrate=115200, tx=14, rx=13)
 while True:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+  if uart2.any():
+      _echo = uart2.read(128)
+      if _echo:
+          uart2.write(_echo)
+          bot_screen.draw_label(text="UART2: " + repr(_echo), row=3)
+  bot_screen.draw_label(text='UART2 waiting / echo', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
   import time
-  time.sleep(2)
-  if uart1.any() > 0:
-    print('收到: ' + str(uart1.read().decode()))
-  import time
-  time.sleep_ms(50)
+  time.sleep(0.1)

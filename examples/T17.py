@@ -77,29 +77,31 @@ class Screen240:
         lv.timer_handler()
 
 from mpython import MPythonPin, PinMode
+from mpython import rgb
 
-count = None
+seconds = None
 
 
 bot_screen = Screen240()
-from machine import Pin
-pin2 = Pin(2, Pin.OUT)
-count = 10
-while count > 0:
-  soil_1 = MPythonPin(0, PinMode.ANALOG)
+soil_1 = MPythonPin(0, PinMode.ANALOG)
+while True:
+  for seconds in range(10, 0, -1):
+    rgb.fill((0, 30, 0))
+    rgb.write()
+    bot_screen.draw_label(text='Countdown: ' + str(seconds), row=2, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='Countdown', row=1, color=0xffffff, wrap=False)
+    bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
+    bot_screen.update()
+    import time
+    time.sleep(0.5)
+    rgb.fill((0, 0, 0))
+    rgb.write()
+    import time
+    time.sleep(0.5)
+  rgb.fill((0, 0, 0))
+  rgb.write()
+  bot_screen.draw_label(text='Countdown done', row=1, color=0xffffff, wrap=False)
   bot_screen.draw_label(text='Soil P0: ' + str(soil_1.read_analog()), row=8, color=0xffffff, wrap=False)
   bot_screen.update()
   import time
-  time.sleep(2)
-  print(count)
-  count = count - 1
-  import time
   time.sleep(1)
-print('发射！')
-for count2 in range(3):
-  pin2.value(1)
-  import time
-  time.sleep(0.2)
-  pin2.value(0)
-  import time
-  time.sleep(0.2)
